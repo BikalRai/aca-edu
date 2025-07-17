@@ -1,0 +1,215 @@
+@import './partials/variables';
+@import './partials/base';
+
+header {
+  padding-top: 48px;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .hamburger {
+      cursor: pointer;
+      transition: 0.4s;
+
+      i {
+        font-size: 1.5rem;
+      }
+
+      &:hover {
+        i {
+          color: $primary;
+        }
+      }
+    }
+
+    .nav {
+      display: none;
+      // display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      background-color: $light;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 0 0 12px 12px;
+      z-index: 999999;
+      width: 100%;
+      transform: scale(0);
+      transition: 0.4s;
+
+      &__links {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 1rem;
+        font-weight: 500;
+
+        &_link {
+          color: $dark;
+
+          &::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 0;
+            background-color: $primary;
+            transition: 0.4s;
+          }
+
+          &:hover {
+            &::after {
+              width: 10px;
+            }
+          }
+        }
+      }
+
+      .search {
+        order: 3;
+        background-color: $gray;
+        border-radius: $base-border-radius;
+        padding: 0px 20px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 48px;
+
+        input {
+          border: none;
+          outline: none;
+          background-color: transparent;
+          flex: 1;
+
+          ::placeholder {
+            color: $dark-25;
+          }
+        }
+
+        i {
+          font-size: 1rem;
+          color: $dark-25;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        button {
+          margin-left: auto;
+        }
+      }
+
+      .user {
+        order: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+
+        &__avatar {
+          height: 4rem;
+          width: 4rem;
+          border-radius: $base-border-radius;
+          overflow: hidden;
+
+          img {
+            border-radius: $base-border-radius;
+          }
+        }
+
+        &__details {
+          height: 4rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 12px;
+
+          &_name {
+            font-weight: 600;
+          }
+
+          &_role {
+            font-size: 0.75rem;
+            color: $dark-75;
+          }
+        }
+
+        &__notification {
+          background-color: $primary-5;
+          border-radius: $base-border-radius;
+          width: 4rem;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.4s;
+
+          i {
+            color: $primary;
+            width: 1.25rem;
+            height: 1.25rem;
+          }
+
+          &:hover {
+            background-color: $primary;
+
+            i {
+              color: $light;
+            }
+          }
+        }
+
+        .close__btn {
+          margin-left: auto;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1130px) {
+  header {
+    nav {
+      .hamburger {
+        display: none;
+      }
+
+      .nav {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        transform: scale(1);
+        position: static;
+        box-shadow: 0 0 0;
+
+        &__links {
+          order: 1;
+        }
+
+        .search {
+          order: 2;
+        }
+
+        .user {
+          order: 3;
+
+          .close__btn {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
