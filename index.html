@@ -11,7 +11,7 @@ https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css
 "
       rel="stylesheet"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
@@ -23,7 +23,11 @@ https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -61,7 +65,7 @@ https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css
           </div>
         </div>
       </nav>
-      <div class="owl-carousel owl-theme ac__container">
+      <!-- <div class="owl-carousel owl-theme ac__container header__categories">
         <div class="item"><h4>1</h4></div>
         <div class="item"><h4>2</h4></div>
         <div class="item"><h4>3</h4></div>
@@ -73,6 +77,25 @@ https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css
         <div class="item"><h4>9</h4></div>
         <div class="item"><h4>10</h4></div>
         <div class="item"><h4>11</h4></div>
+      </div> -->
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+          <div class="swiper-slide">Slide 10</div>
+          <div class="swiper-slide">Slide 11</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
       <section class="hero"></section>
     </header>
@@ -86,16 +109,10 @@ https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css
     <script src="
 https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js
 "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="./assets/js/jquery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- <script src="./assets/js/jquery.js"></script> -->
     <script src="./assets/js/index.js"></script>
   </body>
-
-  <script>
-    let a = 1;
-    console.log(++a);
-    console.log(a);
-    console.log(a++);
-    console.log(a);
-  </script>
 </html>

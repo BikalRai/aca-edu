@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$primary-color: #9e5cf2;
+$primary-color-75: rgba(158, 92, 242, 0.75);
+$primary-color-50: rgba(158, 92, 242, 0.5);
+$primary-color-25: rgba(158, 92, 242, 0.25);
+$primary-color-10: rgba(158, 92, 242, 0.15);
+$primary-color-5: rgba(158, 92, 242, 0.05);
+$secondary-color: #ff991f;
+$secondary-color-75: rgba(255, 153, 41, 0.75);
+$secondary-color-50: rgba(255, 153, 41, 0.5);
+$secondary-color-25: rgba(255, 153, 41, 0.25);
+$secondary-color-10: rgba(255, 153, 41, 0.15);
+$secondary-color-5: rgba(255, 153, 41, 0.05);
+$aca-dark: #080808;
+$aca-dark-75: rgba(8, 8, 8, 0.75);
+$aca-dark-50: rgba(8, 8, 8, 0.5);
+$aca-dark-25: rgba(8, 8, 8, 0.25);
+$aca-dark-10: rgba(8, 8, 8, 0.1);
+$aca-dark-5: rgba(8, 8, 8, 0.05);
+$aca-gray: #f5f5f5;
+$aca-light: #fdfdfd;
+$aca-dark-75: #080808ba;
+$aca-dark-25: #0808084a;
+$aca-green: #009e68;
+$aca-light-green: #ebfaf5;
+$aca-red: #ff3c31;
+$aca-light-red: #fff5f5;
+$aca-blue: #5a69f2;
+$aca-light-blue: #f6f7fe;
+
+$colors: (
+  "primary": $primary-color,
+  "seconday": $secondary-color,
+  "black": $aca-dark,
+  "gray": $aca-gray,
+  "white": $aca-light,
+  "green": $aca-green,
+  "red": $aca-red,
+  "blue": $aca-blue,
+);
+
+$base-border-radius: 12px;
+
+$base-gradient: linear-gradient(#b176f2, #fac1f1);

@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'variables';
-@import 'containers';
+@use "./variables" as vars;
+@use "containers" as c;
 
 * {
   padding: 0;
@@ -9,8 +8,8 @@
 }
 
 body {
-  background-color: $light;
-  font-family: 'Montserrat', sans-serif;
+  background-color: vars.$aca-light;
+  font-family: "Montserrat", sans-serif;
   padding: 1rem;
 }
 
@@ -35,7 +34,7 @@ img {
 }
 
 .ac__container {
-  @include aca-container;
+  @include c.aca-container;
 }
 
 .isOpen {

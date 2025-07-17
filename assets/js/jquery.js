@@ -1,7 +1,7 @@
-$('.owl-carousel').owlCarousel({
+$(".header__categories").owlCarousel({
   loop: true,
   margin: 10,
-  nav: false,
+  nav: true,
   autoplay: true,
   autoplayHoverPause: false,
   dots: false,
