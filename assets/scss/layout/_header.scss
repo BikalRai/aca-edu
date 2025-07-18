@@ -27,7 +27,6 @@ header {
 
     .nav {
       display: none;
-      // display: flex;
       flex-direction: column;
       gap: 1.25rem;
       background-color: vars.$aca-light;
@@ -39,9 +38,15 @@ header {
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       border-radius: 0 0 12px 12px;
       z-index: 999999;
-      width: 100%;
-      transform: scale(0);
-      transition: 0.4s;
+      width: 0;
+      overflow: hidden;
+      transform: scale(1);
+      transition: width 0.3s ease;
+
+      &.show {
+        display: flex;
+        width: 100%;
+      }
 
       &__links {
         order: 2;
@@ -74,7 +79,7 @@ header {
       .search {
         order: 3;
         background-color: vars.$aca-gray;
-        border-radius: vars.$base-border-radius;
+        border-radius: vars.$border-radius-12;
         padding: 0px 20px;
         font-weight: 500;
         display: flex;
@@ -117,11 +122,11 @@ header {
         &__avatar {
           height: 4rem;
           width: 4rem;
-          border-radius: vars.$base-border-radius;
+          border-radius: vars.$border-radius-12;
           overflow: hidden;
 
           img {
-            border-radius: vars.$base-border-radius;
+            border-radius: vars.$border-radius-12;
           }
         }
 
@@ -144,7 +149,7 @@ header {
 
         &__notification {
           background-color: vars.$primary-color-5;
-          border-radius: vars.$base-border-radius;
+          border-radius: vars.$border-radius-12;
           width: 4rem;
           height: 4rem;
           display: flex;
@@ -175,9 +180,105 @@ header {
       }
     }
   }
+
+  .hero {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    gap: vars.$base-padding;
+    // background-color: #f8f9d3;
+
+    @media (min-width: 900px) {
+      height: 100vh;
+      padding: 1rem 0;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      height: 100vh;
+      padding: 4rem 0;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__details {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (min-width: 900px) {
+        align-items: flex-start;
+        justify-content: start;
+        padding-top: 82px;
+      }
+
+      h1 {
+        font-size: 1.55rem;
+        font-weight: 900;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1.25rem;
+        line-height: 1.6;
+
+        @media (min-width: 900px) {
+          font-size: 2.5rem;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 40px;
+        }
+
+        .web {
+          background: vars.$base-gradient-left;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+        }
+      }
+
+      .arrow__down {
+        width: 4.25rem;
+        height: 5rem;
+      }
+
+      &_cta {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          flex: 1;
+          border-radius: vars.$border-radius-12;
+          padding: 1.25rem 1.5rem;
+        }
+
+        img {
+          flex: 1;
+        }
+      }
+    }
+
+    &__image {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+
+      img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
-@media (min-width: 1130px) {
+@media (min-width: 1200px) {
   header {
     nav {
       .hamburger {
@@ -185,14 +286,17 @@ header {
       }
 
       .nav {
-        width: 80%;
-        display: flex;
+        display: flex !important;
+        width: auto !important;
+        position: static;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        transform: scale(1);
-        position: static;
-        box-shadow: 0 0 0;
+        box-shadow: none !important;
+        padding: 0;
+        border-radius: 0;
+        overflow: visible;
+        transition: none !important;
 
         &__links {
           order: 1;
@@ -210,27 +314,6 @@ header {
           }
         }
       }
-    }
-  }
-}
-
-.swiper {
-  width: 600px;
-  height: 300px;
-
-  &-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #444;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
 }

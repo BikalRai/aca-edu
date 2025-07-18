@@ -4,36 +4,49 @@ const navEl = document.querySelector("nav .nav");
 window.addEventListener("resize", () => {
   let viewWidth = window.innerWidth;
 
-  if (viewWidth < 1130) {
-    hamburgerEl.style.display = "block";
-    navEl.style.display = "none";
-    navEl.style.transform = "scale(0)";
-  } else {
+  if (viewWidth >= 1200) {
     hamburgerEl.style.display = "none";
+    navEl.classList.remove("show");
     navEl.style.display = "flex";
-    navEl.style.transform = "scale(1)";
+    navEl.style.width = "auto";
+  } else {
+    hamburgerEl.style.display = "block";
+    navEl.classList.remove("show");
+    navEl.style.display = "none";
+    navEl.style.width = "0";
   }
 });
 
 document.querySelector("header").addEventListener("click", function (e) {
   if (e.target.classList.contains("hamburger__bar")) {
-    hamburgerEl.style.display = "none";
+    navEl.classList.add("show");
     navEl.style.display = "flex";
-    navEl.style.transform = "scale(1)";
+    navEl.style.width = "100%";
   }
 
   if (e.target.classList.contains("close__btn")) {
-    hamburgerEl.style.display = "block";
-    navEl.style.display = "none";
-    navEl.style.transform = "scale(0)";
+    navEl.classList.remove("show");
+    navEl.style.width = "0";
+    setTimeout(() => {
+      navEl.style.display = "none";
+    }, 400);
   }
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".mySwiper", {
-    navigation: {
-      slidesPerView: 9,
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+
+document.querySelector("main").addEventListener("click", function (e) {
+  if (e.target.tagName.toLowerCase() === "a") {
+    console.log(
+      document.querySelectorAll(
+        ".new__courses .new__courses_header--links li a"
+      )
+    );
+
+    document
+      .querySelectorAll(".new__courses .new__courses_header--links li a")
+      .forEach((link) => {
+        link.parentElement.classList.remove("active");
+      });
+
+    e.target.parentElement.classList.add("active");
+  }
 });

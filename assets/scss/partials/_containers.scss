@@ -1,7 +1,13 @@
-$container-max-width: 1512px;
+$container-width-xl: 1512px;
+$container-width-lg: 1256px;
 $container-margin: auto;
 
-@mixin aca-container {
-  max-width: $container-max-width;
+@mixin aca-container-xl {
+  max-width: $container-width-xl;
+  margin: $container-margin;
+}
+
+@mixin aca-container-lg {
+  max-width: $container-width-xl;
   margin: $container-margin;
 }

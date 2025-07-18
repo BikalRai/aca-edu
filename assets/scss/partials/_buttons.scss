@@ -1,0 +1,11 @@
+@use "./variables" as vars;
+.btn__primary {
+  background-color: vars.$aca-dark;
+  color: vars.$aca-light;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: vars.$base-box-shadow;
+    background-color: vars.$secondary-color;
+  }
+}

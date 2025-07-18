@@ -40,6 +40,12 @@ $colors: (
   "blue": $aca-blue,
 );
 
-$base-border-radius: 12px;
+$border-radius-12: 12px;
+$border-radius-10: 10px;
 
-$base-gradient: linear-gradient(#b176f2, #fac1f1);
+$base-padding: 1.25rem;
+
+$base-gradient-left: linear-gradient(to left, #b176f2, #fac1f1);
+$base-gradient-right: linear-gradient(to right, #b176f2, #fac1f1);
+
+$base-box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);

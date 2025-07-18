@@ -1,0 +1,132 @@
+@use "../../partials/variables" as vars;
+
+main {
+  .new__courses {
+    &_header {
+      padding-top: 2.5rem;
+      display: grid;
+      gap: 1.25rem;
+
+      @media (min-width: 900px) {
+        padding-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      &--links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+
+        li {
+          a {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 24px;
+            color: vars.$aca-dark;
+            border-radius: vars.$border-radius-10;
+            transition: background-color 0.4s;
+          }
+
+          &.active {
+            a {
+              background-color: vars.$aca-gray;
+            }
+          }
+
+          &:hover {
+            a {
+              background-color: vars.$aca-dark;
+              color: vars.$aca-light;
+            }
+          }
+
+          button {
+            background-color: vars.$aca-gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: vars.$border-radius-10;
+            padding: 12px;
+
+            i {
+              color: vars.$aca-dark-50;
+            }
+          }
+        }
+      }
+    }
+
+    &_courses {
+      display: grid;
+      gap: 1.25rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      &--course {
+        background-color: vars.$aca-gray;
+        padding: 10px 10px 20px;
+        border-radius: vars.$border-radius-12;
+        display: grid;
+        gap: 1.25rem;
+        border: 1px solid vars.$aca-gray;
+        transition: box-shadow 0.4s;
+
+        &-img {
+          border-radius: vars.$border-radius-10;
+          overflow: hidden;
+        }
+
+        &-details {
+          display: grid;
+          gap: 1.25rem;
+          h3 {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+
+          .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__item {
+              display: flex;
+              gap: 8px;
+
+              i {
+                font-size: 1rem;
+                color: vars.$aca-dark-25;
+              }
+
+              p {
+                font-size: 13px;
+                color: vars.$aca-dark-75;
+              }
+            }
+          }
+
+          .cta {
+            button {
+              padding: 12px 24px;
+              border-radius: vars.$border-radius-10;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: vars.$base-box-shadow;
+        }
+      }
+    }
+  }
+}

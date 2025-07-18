@@ -1,0 +1,107 @@
+@use "../../partials/variables" as vars;
+
+main {
+  .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.6;
+
+      @media (min-width: 900px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    &__components {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+
+      @media (min-width: 900px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+        position: relative;
+      }
+
+      &_elements {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: vars.$aca-gray;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: vars.$border-radius-12;
+
+        @media (min-width: 900px) {
+          width: 744px;
+        }
+
+        .input__wrapper {
+          flex: 2;
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+
+          button {
+            padding: 10px 24px;
+            border-radius: vars.$border-radius-10;
+          }
+
+          input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            flex: 2;
+            font-size: 1rem;
+            color: vars.$aca-dark;
+
+            &::placeholder {
+              color: vars.$aca-dark-25;
+
+              font-size: 13px;
+            }
+          }
+        }
+
+        button {
+          i {
+            font-size: 1.25rem;
+            color: vars.$aca-dark-25;
+            flex: 1;
+            transition: 0.4s;
+          }
+
+          &:hover {
+            i {
+              color: vars.$secondary-color;
+            }
+          }
+        }
+      }
+
+      p {
+        color: vars.$aca-dark-75;
+        font-size: 1rem;
+      }
+
+      img {
+        width: 78px;
+        height: 40px;
+
+        @media (min-width: 900px) {
+          position: absolute;
+          top: -20px;
+          right: -75px;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 @use "./variables" as vars;
-@use "containers" as c;
+@use "./containers" as c;
 
 * {
   padding: 0;
@@ -11,6 +11,7 @@ body {
   background-color: vars.$aca-light;
   font-family: "Montserrat", sans-serif;
   padding: 1rem;
+  min-height: 100dvh;
 }
 
 a {
@@ -25,6 +26,9 @@ button {
   border: none;
   outline: none;
   background-color: transparent;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -33,21 +37,16 @@ img {
   height: auto;
 }
 
-.ac__container {
-  @include c.aca-container;
+.ac__container-xl {
+  @include c.aca-container-xl;
 }
 
-.isOpen {
-  display: flex;
-  width: 100%;
+.ac__container-lg {
+  @include c.aca-container-lg;
 }
 
-.hidden {
-  display: none;
-}
-
-@media (min-width: 1512px) {
-  body {
-    padding: 0;
-  }
+.text-gradient {
+  background: vars.$base-gradient-right;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
