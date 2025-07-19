@@ -1,4 +1,4 @@
-@use "../../partials/variables" as vars;
+@use "../../helper/variables" as vars;
 
 main {
   .new__courses {
@@ -77,7 +77,7 @@ main {
         padding: 10px 10px 20px;
         border-radius: vars.$border-radius-12;
         display: grid;
-        gap: 1.25rem;
+        gap: 1.5rem;
         border: 1px solid vars.$aca-gray;
         transition: box-shadow 0.4s;
 
@@ -116,9 +116,22 @@ main {
           }
 
           .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
             button {
               padding: 12px 24px;
               border-radius: vars.$border-radius-10;
+            }
+
+            .rating {
+              display: flex;
+              gap: 8px;
+
+              i {
+                color: vars.$secondary-color;
+              }
             }
           }
         }

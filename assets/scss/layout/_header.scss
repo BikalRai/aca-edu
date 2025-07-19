@@ -1,5 +1,5 @@
-@use "../partials/variables" as vars;
-@use "../partials/containers" as c;
+@use "../helper/variables" as vars;
+@use "../helper/containers" as c;
 
 header {
   padding-top: 48px;

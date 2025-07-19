@@ -9,7 +9,7 @@
 
 body {
   background-color: vars.$aca-light;
-  font-family: "Montserrat", sans-serif;
+  font-family: vars.$primary-font;
   padding: 1rem;
   min-height: 100dvh;
 }

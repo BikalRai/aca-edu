@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +7,7 @@
 
 body {
   background-color: #fdfdfd;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 1rem;
   min-height: 100dvh;
 }
@@ -488,7 +488,7 @@ main .new__courses_courses--course {
   padding: 10px 10px 20px;
   border-radius: 12px;
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
   border: 1px solid #f5f5f5;
   transition: box-shadow 0.4s;
 }
@@ -521,9 +521,21 @@ main .new__courses_courses--course-details .info__item p {
   font-size: 13px;
   color: rgba(8, 8, 8, 0.7294117647);
 }
+main .new__courses_courses--course-details .cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 main .new__courses_courses--course-details .cta button {
   padding: 12px 24px;
   border-radius: 10px;
+}
+main .new__courses_courses--course-details .cta .rating {
+  display: flex;
+  gap: 8px;
+}
+main .new__courses_courses--course-details .cta .rating i {
+  color: #ff991f;
 }
 main .new__courses_courses--course:hover {
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
