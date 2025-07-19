@@ -1,0 +1,134 @@
+@use "../../helper/variables" as vars;
+
+main {
+  .instructors {
+    // background-color: #9f9c9e;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @media (min-width: 1400px) {
+      //   height: 488px;
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      @media (min-width: 1400px) {
+        flex: 1;
+      }
+
+      h1 {
+        font-size: 38px;
+        font-weight: 900;
+
+        span {
+          background: vars.$base-gradient-left;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        color: vars.$aca-dark-75;
+      }
+
+      .cta {
+        position: relative;
+        margin-top: 3rem;
+
+        button {
+          font-size: 14px;
+          padding: 16px 20px;
+          border-radius: vars.$border-radius-10;
+          display: flex;
+          gap: 12px;
+          align-items: center;
+        }
+
+        .arrow,
+        .ad {
+          position: absolute;
+        }
+
+        .arrow {
+          //   aspect-ratio: 19/9;
+          width: 78px;
+          top: 0;
+          left: 160px;
+        }
+
+        .ad {
+          //   aspect-ratio: 109/36;
+          width: 109px;
+          top: -30px;
+          left: 220px;
+        }
+      }
+    }
+
+    &__cards {
+      //   background-image: url("../images/instructor-bg.png");
+      background-position: center right;
+      display: grid;
+      gap: 1.25rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1000px) {
+        flex: 3;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (min-width: 1400px) {
+        padding-left: 20rem;
+      }
+
+      &_card {
+        border-radius: vars.$border-radius-12;
+        padding: 10px 10px 20px;
+        background-color: vars.$aca-gray;
+        display: grid;
+        gap: 1.25rem;
+        height: 232px;
+        border: 1px solid vars.$aca-dark-5;
+        transition: box-shadow 0.4s;
+
+        &--img {
+          overflow: hidden;
+          border-radius: vars.$border-radius-10;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center -30px;
+
+            @media (min-width: 530px) {
+              object-position: center -80px;
+            }
+          }
+        }
+
+        .info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        &:hover {
+          box-shadow: vars.$base-box-shadow;
+        }
+      }
+    }
+  }
+}

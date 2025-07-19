@@ -61,6 +61,7 @@ main {
     }
 
     &_courses {
+      margin-top: 2rem;
       display: grid;
       gap: 1.25rem;
 
@@ -78,7 +79,7 @@ main {
         border-radius: vars.$border-radius-12;
         display: grid;
         gap: 1.5rem;
-        border: 1px solid vars.$aca-gray;
+        border: 1px solid vars.$aca-dark-5;
         transition: box-shadow 0.4s;
 
         &-img {
@@ -123,6 +124,9 @@ main {
             button {
               padding: 12px 24px;
               border-radius: vars.$border-radius-10;
+              display: flex;
+              gap: 8px;
+              align-items: center;
             }
 
             .rating {
