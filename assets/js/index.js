@@ -1,5 +1,6 @@
 const hamburgerEl = document.querySelector("nav .hamburger");
 const navEl = document.querySelector("nav .nav");
+const scrollBtn = document.getElementById("scrollToTopBtn");
 
 window.addEventListener("resize", () => {
   let viewWidth = window.innerWidth;
@@ -48,5 +49,26 @@ document.querySelector("main").addEventListener("click", function (e) {
       });
 
     e.target.parentElement.classList.add("active");
+  }
+});
+
+new WOW().init();
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  // Scroll smoothly to the header element
+  const header = document.querySelector("header");
+  if (header) {
+    header.scrollIntoView({ behavior: "smooth" });
+  } else {
+    // fallback to top of page
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 });

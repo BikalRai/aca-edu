@@ -1,0 +1,190 @@
+@use "../../helper/variables" as vars;
+
+main {
+  .your__courses {
+    margin-top: 5rem;
+
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      button {
+        padding: 10px 24px;
+        background-color: vars.$aca-gray;
+        color: vars.$aca-dark-75;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    &_cards {
+      margin-top: 2.5rem;
+      display: grid;
+      gap: 24px;
+
+      @media (min-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &--card {
+        background: vars.$aca-gray;
+        border: 1px solid vars.$aca-dark-5;
+        overflow: hidden;
+        border-radius: vars.$border-radius-12;
+        transition: box-shadow 0.4s;
+
+        @media (min-width: 660px) {
+          height: 260px;
+          display: flex;
+        }
+
+        &-img {
+          height: 400px;
+          flex: 1;
+
+          @media (min-width: 660px) {
+            height: auto;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &-details {
+          flex: 1;
+          display: grid;
+          gap: 1.25rem;
+          padding: 20px;
+
+          h4 {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+
+          .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__item {
+              display: flex;
+              gap: 8px;
+              color: vars.$aca-dark-75;
+              font-size: 13px;
+              font-weight: 500;
+
+              i {
+                color: vars.$aca-dark-25;
+              }
+            }
+          }
+
+          .progress {
+            display: grid;
+            gap: 8px;
+
+            input[type="range"] {
+              background: transparent;
+              -webkit-appearance: none;
+              appearance: none;
+
+              &:disabled {
+                opacity: 1;
+                cursor: not-allowed;
+
+                &::-webkit-slider-thumb {
+                  background: vars.$aca-blue;
+                  cursor: not-allowed;
+                }
+
+                &::-webkit-slider-runnable-track {
+                  background-color: vars.$aca-green;
+                  border-radius: vars.$border-radius-12;
+                }
+
+                &::-moz-slider-thumb {
+                  background: vars.$aca-blue;
+                  cursor: not-allowed;
+                }
+
+                &::-moz-slider-runnable-track {
+                  background-color: vars.$aca-green;
+                  border-radius: vars.$border-radius-12;
+                }
+              }
+            }
+
+            &__info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              color: vars.$aca-dark-75;
+              font-size: 12px;
+
+              .points {
+                margin-left: 2rem;
+              }
+            }
+          }
+
+          .instructor {
+            display: flex;
+            justify-content: space-between;
+
+            align-items: center;
+
+            div {
+              display: flex;
+              gap: 8px;
+
+              .img {
+                height: 44px;
+                width: 44px;
+                border-radius: vars.$border-radius-10;
+                overflow: hidden;
+              }
+
+              .details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .name {
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 1;
+                }
+
+                .role {
+                  font-size: 12px;
+                  line-height: 1;
+                  color: vars.$aca-dark-75;
+                }
+              }
+            }
+
+            button {
+              display: flex;
+              gap: 8px;
+              padding: 10px 24px;
+              border-radius: vars.$border-radius-10;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: vars.$base-box-shadow;
+        }
+      }
+    }
+  }
+}

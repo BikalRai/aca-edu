@@ -1,0 +1,118 @@
+@use "../../helper/variables" as vars;
+
+main {
+  .top__courses {
+    display: grid;
+    gap: 24px;
+
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .btns {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        button {
+          padding: 12px;
+          border-radius: vars.$border-radius-12;
+          background-color: vars.$aca-gray;
+
+          i {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    &_cards {
+      display: grid;
+      gap: 24px;
+
+      @media (min-width: 660px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 900px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      &--card {
+        background-color: vars.$aca-gray;
+        border: 1px solid vars.$aca-dark-10;
+        border-radius: vars.$border-radius-12;
+        padding: 10px 10px 20px;
+        display: grid;
+        gap: 1.25rem;
+        transition: box-shadow 0.4s;
+
+        .img {
+          overflow: hidden;
+          border-radius: vars.$border-radius-10;
+        }
+
+        .details {
+          display: grid;
+          gap: 1.25rem;
+
+          .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__item {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+
+              i {
+                color: vars.$aca-dark-25;
+                font-size: 1rem;
+              }
+
+              span {
+                font-size: 13px;
+                color: vars.$aca-dark-75;
+              }
+            }
+          }
+
+          .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+              padding: 10px 24px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              border-radius: vars.$border-radius-10;
+            }
+
+            .rating {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+
+              i {
+                color: vars.$secondary-color;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: vars.$base-box-shadow;
+        }
+      }
+    }
+  }
+}

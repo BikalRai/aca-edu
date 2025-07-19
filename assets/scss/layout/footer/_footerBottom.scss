@@ -1,0 +1,28 @@
+@use "../../helper/variables" as vars;
+
+footer {
+  .bottom {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: vars.$aca-dark-75;
+    border-radius: vars.$border-radius-12;
+    background-color: vars.$aca-gray;
+    padding: 24px;
+
+    .policy {
+      display: flex;
+      gap: 4px;
+
+      a {
+        transition: color 0.4s;
+
+        &:hover {
+          color: vars.$secondary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@use "../../helper/variables" as vars;
+
+footer {
+  .components {
+    margin-top: 24px;
+    display: grid;
+    gap: 48px;
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .certificate {
+      display: grid;
+      gap: 24px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .categories ul,
+      .quick__access ul {
+        display: grid;
+        gap: 1rem;
+
+        li {
+          a {
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.4s;
+
+            &:hover {
+              color: vars.$aca-blue;
+            }
+          }
+        }
+      }
+
+      .categories,
+      .quick__access {
+        display: grid;
+        gap: 20px;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .comments {
+      display: grid;
+      gap: 20px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      &__cards {
+        display: grid;
+        gap: 20px;
+
+        &_card {
+          background-color: vars.$aca-gray;
+          border-radius: vars.$border-radius-12;
+          padding: 1rem;
+
+          h6 {
+            font-size: 13px;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 12px;
+            color: vars.$aca-dark-75;
+          }
+        }
+      }
+    }
+  }
+}

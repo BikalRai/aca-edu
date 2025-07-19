@@ -7,16 +7,22 @@
   box-sizing: border-box;
 }
 
+// html {
+//   scroll-behavior: smooth;
+// }
+
 body {
   background-color: vars.$aca-light;
   font-family: vars.$primary-font;
   padding: 1rem;
   min-height: 100dvh;
   color: vars.$aca-dark;
+  overflow-x: clip;
 }
 
 a {
   text-decoration: none;
+  color: vars.$aca-dark;
 }
 
 li {
@@ -50,4 +56,14 @@ img {
   background: vars.$base-gradient-right;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+.stick-top {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transform: translateY(0);
+}
+
+.remove-sticky {
+  position: static;
 }
